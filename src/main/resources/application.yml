@@ -1,0 +1,14 @@
+spring:
+  mvc:
+    view:
+      suffix: .html
+    static-path-pattern: /static/**
+#  resources:
+#    static-locations: classpath:/templates/,classpath:/static/
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5

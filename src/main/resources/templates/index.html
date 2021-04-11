@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/js/qrcodejs/qrcode.js}"></script>
+</head>
+<body>
+
+你好
+<h1></h1>
+<button onclick="add()">按钮</button>
+<div>${url}</div>
+<p th:text="${money}"/>
+<div id="qrPayImg" class="qrcode-img-area">
+    <script>
+        function add() {
+            const url = "[[${url}]]";
+            console.log(url);
+            var qrcode = new QRCode("qrPayImg", {
+                text: url,
+                width: 168,
+                height: 168,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+    </script>
+</body>
+</html>
